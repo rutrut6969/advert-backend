@@ -1,21 +1,9 @@
 import express from 'express';
 
+// Setting up route for the users
 const router = express.Router();
 
-const users = [
-  {
-    fname: 'John',
-    lname: 'Doe',
-    age: '25',
-  },
-  {
-    fname: 'Jane',
-    lname: 'Doe',
-    age: '26',
-  },
-];
-
-// /users
+// /users Get Request Default url is /api/users defined in index.js
 router.get('/', (req, res) => {
   res.send(users);
 });
@@ -24,4 +12,5 @@ router.post('/', (req, res) => {
   res.send(req.body);
 });
 
+// Exporting the router to be used in index.js
 export default router;
